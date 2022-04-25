@@ -1,0 +1,11 @@
+version: "3"
+services:
+  squid:
+    image: sameersbn/squid:3.5.27-2
+    volumes:
+       - ./squid.conf:/etc/squid/squid.conf
+    restart: always
+#    ports:
+#      - 33125:3128
+    network_mode: "host"
+#docker run --name squid -d -p 33125:3128 --volume /tmp/squid.conf:/etc/squid/squid.conf sameersbn/squid:3.5.27-2
